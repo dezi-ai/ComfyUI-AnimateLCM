@@ -10,9 +10,10 @@ import torch.nn as nn
 import torch.utils.checkpoint
 
 from diffusers.configuration_utils import ConfigMixin, register_to_config
-from diffusers.modeling_utils import ModelMixin
+# from diffusers.modeling_utils import ModelMixin
+from diffusers import ModelMixin
 from diffusers.utils import BaseOutput, logging
-from animatelcm.models.embeddings import TimestepEmbedding, Timesteps
+from .embeddings import TimestepEmbedding, Timesteps
 from .unet_blocks import (
     CrossAttnDownBlock3D,
     CrossAttnUpBlock3D,

@@ -2,16 +2,16 @@ import os
 import copy
 from einops import rearrange
 from transformers import CLIPTextModel, CLIPTokenizer
-from animatelcm.models.unet import UNet3DConditionModel
-from animatelcm.pipline import AnimationPipeline
+from .animatelcm.models.unet import UNet3DConditionModel
+from .animatelcm.pipline import AnimationPipeline
 import folder_paths
 import torch
 from diffusers import AutoencoderKL
 from omegaconf import OmegaConf
 from safetensors import safe_open
-from animatelcm.utils.convert_from_ckpt import convert_ldm_unet_checkpoint, convert_ldm_clip_checkpoint, convert_ldm_vae_checkpoint
-from animatelcm.scheduler.lcm_scheduler import LCMScheduler
-from animatelcm.utils.lcm_utils import convert_lcm_lora
+from .animatelcm.utils.convert_from_ckpt import convert_ldm_unet_checkpoint, convert_ldm_clip_checkpoint, convert_ldm_vae_checkpoint
+from .animatelcm.scheduler.lcm_scheduler import LCMScheduler
+from .animatelcm.utils.lcm_utils import convert_lcm_lora
 from diffusers.utils.import_utils import is_xformers_available
 
 
@@ -64,16 +64,19 @@ class AnimateLCMModelLoader:
         stable_diffusion_paths = os.path.join(all_model_base, "StableDiffusion", "stable-diffusion-v1-5")
         self.tokenizer = CLIPTokenizer.from_pretrained(
             stable_diffusion_paths, subfolder="tokenizer")
+        print("Done loading tokenizer")
         self.text_encoder = CLIPTextModel.from_pretrained(
             stable_diffusion_paths, subfolder="text_encoder").cuda()
+        print("Done loading text_encoder")
         self.vae = AutoencoderKL.from_pretrained(
             stable_diffusion_paths, subfolder="vae").cuda()
+        print("Done loading vae")
         current_dir = os.path.dirname(os.path.realpath(__file__))
         self.inference_config  = OmegaConf.load(os.path.join(current_dir, "configs", "inference.yaml"))
         self.unet = UNet3DConditionModel.from_pretrained_2d(
             stable_diffusion_paths, subfolder="unet",
             unet_additional_kwargs=OmegaConf.to_container(self.inference_config.unet_additional_kwargs)).cuda()
-
+        print("Done loading unet")
         # load motion model
         if self.unet is None:
             print("Please select a pretrained model path.")
@@ -103,10 +106,12 @@ class AnimateLCMModelLoader:
             converted_vae_checkpoint = convert_ldm_vae_checkpoint(
                 base_model_state_dict, self.vae.config)
             self.vae.load_state_dict(converted_vae_checkpoint)
+            print("Done convert vae")
 
             converted_unet_checkpoint = convert_ldm_unet_checkpoint(
                 base_model_state_dict, self.unet.config)
             self.unet.load_state_dict(converted_unet_checkpoint, strict=False)
+            print("Done convert unet")
 
         if is_xformers_available():
             self.unet.enable_xformers_memory_efficient_attention()
