@@ -31,6 +31,21 @@ Thanks the author: [Jedrzej Kosinski](https://github.com/Kosinkadink)
 
 <b>Download or drag images of the workflows into ComfyUI to instantly load the corresponding workflows!</b>
 
+### The pure workflow using animate-diff
+> Run faster but with a quality trade-off
+
+[AnimateLCM.json](./workflows/animatelcm.json)
+<center>
+<image src="./workflows/animatelcm.svg" width="50%">
+</center>
+
+
+### The advanced workflow using custom-sampler
+[AnimateLCM_advanced.json](./workflows/animatelcm_advanced.json) [Reddit](https://www.reddit.com/r/comfyui/comments/1ajjp9v/animatelcm_support_just_dropped/)
+<center>
+<image src="./workflows/animatelcm_advanced.svg" width="50%">
+</center>
+
 
 > Prompt
 <b>
