@@ -109,6 +109,32 @@ full figure bella thorne, hyperrealistic portrait, bladerunner street, art of el
 
 > Prompt
 <b>
+photographic portrait of a stunningly beautiful gothic female in soft dreamy light at sunset, contemporary fashion shoot, by edward robert hughes, annie leibovitz and steve mccurry, david lazar, jimmy nelsson, breathtaking, 8 k resolution, extremely detailed, beautiful, establishing shot, artistic, hyperrealistic, beautiful face, octane render
+</b>
+
+| LCM step=5                                                   | LCM step = 10                                                |  LCM step = 20    |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ---- |
+| <video src="https://github.com/dezi-ai/ComfyUI-AnimateLCM/assets/154349745/8aa06a3e-e891-44a2-9ffa-c30fe9e005c1"> | <video src="https://github.com/dezi-ai/ComfyUI-AnimateLCM/assets/154349745/1beb172d-7646-4a9f-9067-a5ceea8075c3"> |   <video src="https://github.com/dezi-ai/ComfyUI-AnimateLCM/assets/154349745/2f552efc-d95c-4005-95ed-c212d8c502e1">    |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+
+> Prompt
+<b>
 realistic ethereal hydrangea dryad wearing beautiful dress, deity of hydrangeas made of hydrangeas, mystical, 4k digital masterpiece by Alberto Seveso and Anna Dittman, Ruan Jia, rossdraws, full view, fantasycore, Hyperdetailed, realistic oil on linen, soft lighting, Iconography background, featured on Artstation
 </b>
 
