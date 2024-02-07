@@ -30,4 +30,4 @@ Thanks the author: [Jedrzej Kosinski](https://github.com/Kosinkadink)
 
 | LCM step=5                                                   | LCM step = 10                                                |  LCM step = 20    |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ---- |
-| <video src="./workflows/videos/069c6cf5-103f-4f5d-ab3c-8d1d6977727e/069c6cf5-103f-4f5d-ab3c-8d1d6977727e-step5_00001.mp4"> | <video src="./workflows/videos/069c6cf5-103f-4f5d-ab3c-8d1d6977727e/069c6cf5-103f-4f5d-ab3c-8d1d6977727e-step10_00001.mp4"> |   <video src="./workflows/videos/069c6cf5-103f-4f5d-ab3c-8d1d6977727e/069c6cf5-103f-4f5d-ab3c-8d1d6977727e-step5_00001.mp4">    |
+| <video src="https://github.com/dezi-ai/ComfyUI-AnimateLCM/raw/main/workflows/videos/069c6cf5-103f-4f5d-ab3c-8d1d6977727e/069c6cf5-103f-4f5d-ab3c-8d1d6977727e-step10_00001.mp4"> | <video src="./workflows/videos/069c6cf5-103f-4f5d-ab3c-8d1d6977727e/069c6cf5-103f-4f5d-ab3c-8d1d6977727e-step10_00001.mp4"> |   <video src="./workflows/videos/069c6cf5-103f-4f5d-ab3c-8d1d6977727e/069c6cf5-103f-4f5d-ab3c-8d1d6977727e-step5_00001.mp4">    |
