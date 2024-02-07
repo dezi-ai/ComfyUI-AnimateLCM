@@ -1,17 +1,10 @@
 import folder_paths
-import os
-import sys
+from .animatediff.logger import logger
+from .animatediff.utils_model import get_available_motion_models, Folders
+from .animatediff.nodes import NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS
 
-sys.path.append(os.path.join(os.path.dirname(os.path.realpath(__file__)), "animatelcm"))
+if len(get_available_motion_models()) == 0:
+    logger.error(f"No motion models found. Please download one and place in: {folder_paths.get_folder_paths(Folders.ANIMATEDIFF_MODELS)}")
 
-os.makedirs(os.path.join(folder_paths.models_dir, "AnimateLCM"), exist_ok=True)
-
-folder_paths.add_model_folder_path("animatelcm", os.path.join(folder_paths.models_dir, "AnimateLCM"))
-folder_paths.folder_names_and_paths['animatelcm'] = (folder_paths.folder_names_and_paths['animatelcm'][0], folder_paths.supported_pt_extensions) # | {'.json'})
-
-animatelcm_checkpoints = folder_paths.get_filename_list("animatelcm")
-
-assert len(animatelcm_checkpoints) > 0, "ERROR: No AnimateLCM checkpoints found. Please download & place them in the ComfyUI/models/AnimateLCM folder, and restart ComfyUI."
-
-from .nodes import NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS
-__all__ = ["NODE_CLASS_MAPPINGS", "NODE_DISPLAY_NAME_MAPPINGS"]
+WEB_DIRECTORY = "./web"
+__all__ = ["NODE_CLASS_MAPPINGS", "NODE_DISPLAY_NAME_MAPPINGS", "WEB_DIRECTORY"]
