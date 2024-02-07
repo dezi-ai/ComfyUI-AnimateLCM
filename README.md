@@ -16,13 +16,13 @@ Video diffusion models has been gaining increasing attention for its ability to 
 
 ## Installation
 
-1. Install Comfyui
+1. Install [Comfyui](https://github.com/comfyanonymous/ComfyUI)
 2. Download AnimateLCM from huggingface [https://huggingface.co/wangfuyun/AnimateLCM/tree/main](https://huggingface.co/wangfuyun/AnimateLCM/tree/main)
 3. Place `sd15_t2v_beta.ckpt` to ComfyUI `ComfyUI/models/animatediff_models` and place `sd15_lora_beta.safetensors` to `ComfyUI/models/loras`
 
 ## Statistics
 
-> For 5 step, average generation time 21s, 10 step : 42s, 20 step: 86s
+> For 5 step, average generation time for the advanced flow is 21s, 10 step : 42s, 20 step: 86s
 
 ## Workflow
 
